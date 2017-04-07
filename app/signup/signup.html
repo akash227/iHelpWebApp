@@ -1,0 +1,49 @@
+<!--<div class="well">-->
+  <!--<h3 class="center-align animated zoomInRight">iFeed</h3>-->
+<!--</div>-->
+<div id = "loginCard" class="card-panel blue-text hoverable col s12 m7 " >
+  <h4 class ="chip left hoverable">
+    <a href="#!"  ui-sref="home"><i class="fa fa-hand-o-left"></i>&nbsp;Back</a>
+  </h4>
+  <h4 class="center-align">Sign Up</h4>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12 m6 ">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="firstName" type="text" class="validate" ng-model = "orgName">
+          <label for="firstName">Organization Name</label>
+        </div>
+        <!--<div class="input-field col s12 m6 ">-->
+          <!--<i class="material-icons prefix" >account_circle</i>-->
+          <!--<input id="lastName" type="text" ng-model = "lname" class="validate">-->
+          <!--<label for="lastName">Last Name</label>-->
+        <!--</div>-->
+      <!--</div>-->
+      <div class="row">
+        <div class="input-field col s12 m6 ">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="email" class="validate" ng-model = "email">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">phone</i>
+          <input id="mobile" length="10" type="number" class="validate" ng-model = "phone">
+          <label for="mobile">Mobile</label>
+        </div>
+        <div class="input-field col s12 m6 ">
+          <i class="material-icons prefix">lock</i>
+          <input id="password" type="password" class="validate" ng-model = "password"  >
+          <label for="password">Password</label>
+        </div>
+      </div>
+
+
+
+      <button class="btn waves-effect waves-light blue col s5 m2	push-m5 push-s4"  name="action" ng-click="signup();">Signup
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
+
+</div>

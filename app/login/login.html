@@ -1,0 +1,32 @@
+<div class="well">
+    <h3 class="center-align animated zoomInRight">iFeed</h3>
+</div>
+<div id = "loginCard" class="card-panel blue-text hoverable col s12 m7 ">
+    <h4 class ="chip left hoverable"><a ui-sref="home" class="fa fa-hand-o-left"><i></i>&nbsp;Back</a></h4>
+    <h4 class="center-align">Login</h4>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input id="emailLogin" type="email" class="validate" ng-model="mail">
+                    <label for="emailLogin">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="passwordLogin" type="password" class="validate" ng-model="password">
+                    <label for="passwordLogin">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="g-recaptcha col s12 push-m4 push-s1 " data-sitekey="6LdwnhITAAAAAGbVWZ0JwvUzbu07HIZUfQ5AFxtX"></div> -->
+            </div>
+            <button class="btn waves-effect waves-light blue col s5 m2	push-m5 push-s4" type="submit" name="action" ng-click="login()">
+                Login
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+</div>

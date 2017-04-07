@@ -1,0 +1,116 @@
+<div style="padding-top:70px;">
+    <div class="card z-depth-3 hoverable" style="padding: 20px;">
+        <div class="row">
+            <div class="input-field col s9">
+                <!--<i class="material-icons prefix">lock</i>-->
+                <input id="radius" type="text" class="validate" ng-model="locate">
+                <label for="radius">Radius</label>
+            </div>
+            <a class="btn center-block waves-effect waves-light blue col s3"
+               ng-click="fetch()" style="margin: 15px 0px;">Fetch
+            </a>
+            <!--<div class="input-field col s5" style="z-index: 10000;">-->
+            <!--<select id="sortSel">-->
+            <!--<option value="" disabled selected>Sort By</option>-->
+            <!--<option value="quantity">Quantity</option>-->
+            <!--<option value="time">Time</option>-->
+            <!--</select>-->
+            <!--</div>-->
+        </div>
+
+        <ul class="collapsible popout" data-collapsible="accordion">
+            <li ng-repeat="food in foods">
+                <div class="collapsible-header">
+                    {{food.name}}
+                </div>
+                <div class="collapsible-body white" style="padding-top:10px; padding-bottom:10px;">
+                    <ul class="collection" ng-model="user">
+                        <li class="collection-item avatar">
+                            <i class="material-icons circle">reorder</i>
+                            <span class="title" style="font-size: 17px;">People it can can feed</span>
+                            <p style="font-size: 20px;">{{food.quantity}} </p>
+                        </li>
+                        <li class="collection-item avatar">
+                            <i class="material-icons circle">perm_identity</i>
+                            <span class="title" style="font-size: 17px;">Prepared</span>
+                            <p style="font-size: 20px;">{{food.time}} (H:M)</p>
+                        </li>
+                        <li class="collection-item avatar">
+                            <i class="material-icons circle">perm_identity</i>
+                            <span class="title" style="font-size: 17px;">Location</span>
+                            <p style="font-size: 20px;">{{food.address}}</p>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col s4"></div>
+                        <div class="col s4">
+                            <button class="btn waves-effect waves-light" style="margin-left: 23%;" type="submit"
+                                    name="action" ng-click="collect($index)">
+                                Collect!
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <div class="fixed-action-btn" style="position: fixed; right: 10px;bottom: 10px;">
+        <a class="btn-floating btn-large red waves-effect waves-light" ng-click="modalTrigger()">
+            <i class="large material-icons">playlist_add</i>
+        </a>
+
+    </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Add iHelper</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="icon_prefix" type="text" ng-model="name1">
+                            <label for="icon_prefix">Name</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="icon_telephone" type="text" ng-model="phone1">
+                            <label for="icon_telephone">Phone</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">list</i>
+                            <input id="type" type="text" ng-model="type">
+                            <label for="type">Type of vehicle</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <button href="#" class="modal-close right waves-effect waves-green btn-flat"
+                ng-click="addHelper()">Add
+        </button>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>Assign collection</h4>
+            <div class="row">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <ul class="collection" ng-repeat="helper in helpers">
+                                    <li>
+                                        <a class="collection-item" ng-click="selectUser($index)">
+                                            {{helper.name}} - {{helper.typee}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <button class="modal-close btn waves-effect waves-green btn-flat" ng-click="done()"> Done</button>
+        </div>
+    </div>
+</div>

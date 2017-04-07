@@ -1,0 +1,69 @@
+/* app css stylesheet */
+
+.
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+#loginSignup {
+
+  text-align: center;
+}
+
+#loginSignup a {
+
+  margin: 20px;
+  height: 40px;
+}
+body {
+  background-color: #605ca8;
+  font-family: 'Droid Serif', serif;
+}
+.nav-wrapper a{
+  color: darkblue!important;
+}
+
+#mainLogo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: 50vh;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.well {
+  background-color: #ECF0F5;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  margin-top: 5vh;
+
+}
+
+.well h3 {
+  font-family: 'Neuton', serif;
+  font-size: 4em;
+  color: #5C7EA8;
+  font-weight: 1000 !important;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}

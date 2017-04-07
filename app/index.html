@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="iFeed" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="iFeed" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="iFeed" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="iFeed" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>iFeed</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="bower_components/nprogress/nprogress.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+<nav ng-show="nav" style="background-color: #ECF0F5; " ng-controller="NavCtrl">
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo" style="margin-left: 10px;">iFeed</a>
+
+        <ul class="right ">
+
+            <li><a ui-sref="home" style="font-size:1em;"><i class="power_settings_new"></i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+
+            <li><a ui-sref="home"><strong>Logout</strong></a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+<!--[if lt IE 7]>
+<p class="br owsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+<script src="bower_components/nprogress/nprogress.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
+
+    var config = {
+        apiKey: "AIzaSyD2kfdxLucSmC7Xn8uMUXYaJyDzLng4JCY",
+        authDomain: "ifeed-4be93.firebaseapp.com",
+        databaseURL: "https://ifeed-4be93.firebaseio.com",
+        storageBucket: "ifeed-4be93.appspot.com",
+        messagingSenderId: "241859651376"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="app.js"></script>
+<script src="login/login.js"></script>
+<script src="home/home.js"></script>
+<script src="signup/signup.js"></script>
+<script src="main/main.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
