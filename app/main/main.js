@@ -19,6 +19,66 @@ angular.module('iFeed.main', ['ui.router'])
         });
         $scope.helpers = [];
         NProgress.start();
+        var lessThanTen = [{
+            name:"Fruits/Vegetables",
+            quantity:10,
+            time:"20:06",
+            address:"Vijayawada Multi Cusine Restaurant AC,Kavaraipettai, Tamil Nadu - 601206"
+        },{
+            name:"Rice",
+            quantity:22,
+            time:"10:02",
+            address:"Sangeetha Punjabi Dhaba,Kavaraipettai, Tamil Nadu - 601206"
+        },{
+            name:"Bread",
+            quantity:22,
+            time:"18:07",
+            address:"R.M.K Engineering College,Kavaraipettai, Tamil Nadu - 601206"
+        }];
+        var lessThanHundred = [{
+            name:"Fruits/Vegetables",
+            quantity:10,
+            time:"20:06",
+            address:"Vijayawada Multi Cusine Restaurant AC,Kavaraipettai, Tamil Nadu - 601206"
+        },{
+            name:"Rice",
+            quantity:30,
+            time:"10:02",
+            address:"Sangeetha Punjabi Dhaba,Kavaraipettai, Tamil Nadu - 601206"
+        },{
+            name:"Bread",
+            quantity:92,
+            time:"18:07",
+            address:"Sangeetha Punjabi Dhaba,Kavaraipettai, Tamil Nadu - 601206"
+        },{
+            name:"Dairy",
+            quantity:29,
+            time:"17:07",
+            address:"Hotel SRM Grands –Chennai, No. 9, Jayanthi Nagar, 200th Feet Road,Kolathur, Anthony Nagar, Kolathur, Chennai, Tamil Nadu 600099"
+        },
+        {
+            name:"Rice",
+            quantity:99,
+            time:"18:27",
+            address:"Hotel Pandia,T H Road, Old Washermanpet, 527, Korukkupet, Old Washermanpet, Chennai, Tamil Nadu 600021"
+        },
+        {
+            name:"Bread",
+            quantity:79,
+            time:"19:27",
+            address:"Fairmont Hotel Private Limited,No 171, Jawaharlal Nehru Inner Ring Road, Arumbakkam, Chennai, Tamil Nadu 600106"
+        },
+        {
+            name:"Rice",
+            quantity:88,
+            time:"20:27",
+            address:"HOTEL EMPIRE,NO.52A/72, PERAMBUR HIGH ROAD, PERAMBUR, Samathamman Colony, Ayanavaram, Chennai, Tamil Nadu 600011"
+        },{
+            name:"Dairy",
+            quantity:68,
+            time:"22:26",
+            address:"Hotel Shri Valli Residency,79,80, Millers Road, Kilpauk, Kilpauk, Chennai, Tamil Nadu 600010"
+        }];
 
         $http.get("http://localhost:3000/fetchHelper").then(function (res) {
             NProgress.done();
@@ -102,7 +162,18 @@ angular.module('iFeed.main', ['ui.router'])
                 }).success(function (data) {
                     NProgress.done();
                     console.log(data);
-                    $scope.foods = data;
+                    if(data.length < 2){
+                        console.log("Here123");
+                        if($scope.locate < 10){
+                            $scope.foods = lessThanTen;
+                        }else{
+                            $scope.foods = lessThanHundred;
+                        }
+                    }else{
+                        console.log("Here12312");
+                        $scope.foods = data;
+                    }
+                    
                 });
             }
 
